@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :find_book, only: [:show, :edit, :update, :destroy]
+  before_action :find_company, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
  
   
@@ -16,7 +16,11 @@ class CompaniesController < ApplicationController
     if @company.reviews.blank?
       @average_review = 0
       else
+      if @company.reviews.average(:rating).present?
       @average_review = @company.reviews.average(:rating).round(2)
+        else 
+        @average_review = 0
+      end
     end
   end
   
@@ -52,6 +56,7 @@ class CompaniesController < ApplicationController
     @company.destroy
     redirect_to root_path
   end
+
   
   private
   
@@ -59,7 +64,7 @@ class CompaniesController < ApplicationController
     params.require(:company).permit(:name, :description, :location, :category_id, :company_img)
   end
   
-  def find_book
+  def find_company
     @company = Company.find(params[:id])
   end
   
