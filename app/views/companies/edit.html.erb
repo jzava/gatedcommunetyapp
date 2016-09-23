@@ -1,0 +1,16 @@
+<div class="col-md-6 col-md-offset-3"> 
+<div class="edit-company-form">
+
+<h1>Edit Company</h1>
+
+<%= simple_form_for @company, :html => { :multipart => true } do |c| %>
+<%= c.select :category_id, @categories %>
+<%= c.file_field :company_img %>
+  <%= c.input :name,label: "Company Name" %>
+<%= c.input :description %>
+<%= c.input :location %>
+<%= c.button :submit, :class => "btn-custom2" %>
+<% end %>
+  
+  </div>
+  </div>

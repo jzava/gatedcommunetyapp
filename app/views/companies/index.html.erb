@@ -1,0 +1,20 @@
+
+<h1 class="current-category"><%= params[:category] %></h1>
+<% if @companies.count == 0 %>
+<h1> There are no companies currently in this category </h1>
+<% else %>
+
+<div class="row">
+<% @companies.each do |company| %>
+  <div class="col-md-3">
+<a href="/companies/<%= company.id %>"> 
+  <%= image_tag company.company_img.url(:company_index), class: "company" %>
+    </a>
+  </div>
+
+<% end %>
+  </div>
+
+<% end%>
+
+
