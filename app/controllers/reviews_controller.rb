@@ -21,7 +21,11 @@ class ReviewsController < ApplicationController
   end
   
   def edit
-    
+    if @review.edit(review_params)
+      redirect_to company_path(@company)
+      else
+      render 'edit'
+      end 
   end
   
   def update
