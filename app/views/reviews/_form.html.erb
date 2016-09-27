@@ -6,8 +6,9 @@
 <%= r.button :submit, :class => "btn-custom2" %>
 <% end %>
 
-<script src="/assets/">
+<script>
   $('#rating-form').raty({
+    path: '/assets/',
     scoreName: 'review[rating]'
   });
 </script>
