@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :find_company
   before_action :find_review, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :has_reviewed, only: [:new, :edit]
+  before_action :has_reviewed, only: [:new]
   
   def new
     @review = Review.new

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gateway Extension</title>
+    <title>Gated Communety</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,7 +16,7 @@
         <%= link_to(image_tag("bg.png"), root_path) %>
       </div>
     <div class="navbar-header">
-      <%= link_to "Gateway Extension", root_path, class: "navbar-brand" %>
+      <%= link_to raw('Gated Commu<span style="color:#bf922a">net</span>y'), root_path, class: "navbar-brand" %>
       </div>
    <ul class="nav navbar-nav">
      <li><%= link_to "How It Works?", abouts_index_path %></li>
