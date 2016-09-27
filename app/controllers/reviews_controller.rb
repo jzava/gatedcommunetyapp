@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :find_company
   before_action :find_review, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
+  before_action :has_reviewed, only: [:new]
   
   def new
     @review = Review.new
@@ -48,5 +49,9 @@ params.require(:review).permit(:rating, :comment)
   def find_review
   @review = Review.find(params[:id])
   end
+  
+  def has_reviewed
+  redirect_to company_path(@company), notice: "You've already written a review for this company!" if current_user.reviews.exists?(company: @company)
+end
   
 end
