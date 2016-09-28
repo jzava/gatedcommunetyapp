@@ -1,6 +1,15 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  # config/environments/production.rb
+config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('communety'),
+    access_key_id: ENV.fetch('AKIAIPOBWCU6NB5SCMQA'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('us-east-1'),
+  }
+}
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -81,16 +90,7 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
   
-  # config/environments/production.rb
-config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV.fetch('communety'),
-    access_key_id: ENV.fetch('AKIAIPOBWCU6NB5SCMQA'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-east-1'),
-  }
-}
+
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
