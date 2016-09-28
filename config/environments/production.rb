@@ -3,11 +3,11 @@ Rails.application.configure do
   # config/environments/production.rb
 config.paperclip_defaults = {
   storage: :s3,
+  s3_region: ENV["us-east-1"],
   s3_credentials: {
-    bucket: ENV.fetch('communety'),
-    access_key_id: ENV.fetch('AKIAIPOBWCU6NB5SCMQA'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-east-1'),
+    bucket: ENV("communety"),
+    access_key_id: ENV("AKIAIPOBWCU6NB5SCMQA"),
+    secret_access_key: ENV("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"),
   }
 }
   # Code is not reloaded between requests.
