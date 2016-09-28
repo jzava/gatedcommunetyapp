@@ -5,7 +5,7 @@ config.paperclip_defaults = {
   storage: :s3,
   s3_region: ENV["us-east-1"],
   s3_credentials: {
-    bucket: ENV("communety"),
+    bucket: ENV("gatedcommunety.com"),
     access_key_id: ENV("AKIAIPOBWCU6NB5SCMQA"),
     secret_access_key: ENV("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"),
   }
