@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-turbolinks'
 
-gem 'social-share-button'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
