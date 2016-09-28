@@ -37,6 +37,15 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('communety'),
+    access_key_id: ENV.fetch('AKIAIPOBWCU6NB5SCMQA'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('us-east-1'),
+  }
+}
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
