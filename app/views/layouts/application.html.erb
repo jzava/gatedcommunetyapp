@@ -7,6 +7,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/flati-v1.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/flati.css">
     
   </head>
 
@@ -62,6 +65,13 @@
     <%= yield %>
       </div>
 
+    <script type="text/javascript">
+//Initialization of the Plugin 
+$(document).ready(function () {
+ $("body").flati();
+});
+</script>
+    
     
   </body>
 </html>
