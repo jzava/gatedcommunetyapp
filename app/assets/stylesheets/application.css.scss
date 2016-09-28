@@ -365,5 +365,16 @@ font-family: 'Titillium Web', sans-serif;
 
  }
   
+  .outer {
+    width: 1px; /* Or zero, or something very small */
+    margin: auto;
+    overflow: visible;
+    background: red; /* A color just for debug */
+}
+.inner {
+    margin-left: 20px;
+    background: yellow; /* A color just for debug */
+    width: 100px; /* Depending on the desired effect, width might be needed */
+}
   
 }
