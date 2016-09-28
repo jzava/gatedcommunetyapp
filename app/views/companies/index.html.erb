@@ -1,10 +1,10 @@
 <h5><em> Recently added companies at the top. </em></h5> 
+<%= link_to image_tag('/images/FaceBookIcon.png'), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank %>
 
 <h1 class="current-category"><%= params[:category] %></h1>
 <% if @companies.count == 0 %>
 <h1> There are no companies currently in this category </h1>
 <% else %>
-<%= link_to image_tag('/images/FaceBookIcon.png'), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank %>
 
 
 <div class="row">
